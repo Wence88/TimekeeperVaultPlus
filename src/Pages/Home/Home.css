@@ -1,0 +1,126 @@
+.home {
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  color: black;
+}
+
+/* left */
+.home .left {
+  flex: 2.5;
+  background-color: rgba(236, 230, 230, 0.938);
+  padding: 15px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.list_icon {
+  font-size: 16px;
+}
+
+.home .left .column {
+  margin-left: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.home .left .column .row {
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.home .left .column .row-space {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.home .left .column .row-space .box {
+  height: 10px;
+  width: 10px;
+  background-color: red;
+  border-radius: 2px;
+}
+
+.home .left .column .row .tag {
+  padding: 4px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+h4 {
+  text-transform: uppercase;
+  font-size: 13px !important;
+}
+
+p {
+  font-size: 14px;
+}
+
+/* center */
+.home .center {
+  flex: 6;
+}
+
+.home .center .row {
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.home .center .task_container {
+  padding: 15px;
+}
+
+.home .center .add_task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  background-color: lightgray;
+  padding: 4px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.home .center .task_container .task_item {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  background-color: lightgray;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.home .center .task_container .task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.home .center .task_container .task_item .task_desc {
+  text-align-last: left;
+  margin-top: 5px;
+}
+
+.home .center .task_container .task .icon {
+  font-size: 14px;
+}
+
+/* right */
+.home .right {
+  flex: 3.5;
+  background-color: rgba(236, 230, 230, 0.938);
+}
