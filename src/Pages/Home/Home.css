@@ -123,4 +123,33 @@ p {
 .home .right {
   flex: 3.5;
   background-color: rgba(236, 230, 230, 0.938);
+  padding: 15px;
+}
+
+.home .inputContainer {
+  width: 100%;
+}
+
+.home .inputContainer input {
+  width: 90%;
+  background-color: white;
+  border: none;
+  color: black;
+}
+
+.home .inputContainer input:focus {
+  outline: none;
+}
+
+.home .inputContainer .row button{
+  border: none;
+  cursor: pointer;
+}
+
+.home .inputContainer .row button:first-child {
+  background-color: red;
+}
+
+.home .inputContainer .row button:last-child{
+  background-color: teal;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-const HomeLeft = () => {
+const HomeLeft = ({todos}) => {
   return (
     <div className="left">
       <div className="row">
@@ -26,7 +26,7 @@ const HomeLeft = () => {
             <p>Upcoming</p>
           </div>
 
-          <p>12</p>
+          <p>{todos.length}</p>
         </div>
 
         <div className="row row-space">
@@ -38,7 +38,7 @@ const HomeLeft = () => {
             <p>Today</p>
           </div>
 
-          <p>5</p>
+          <p>{todos.length}</p>
         </div>
 
         <div className="row">
@@ -66,7 +66,7 @@ const HomeLeft = () => {
             <p>Personal</p>
           </div>
 
-          <p>3</p>
+          <p>{todos.length}</p>
         </div>
 
         <div className="row row-space">
@@ -79,7 +79,7 @@ const HomeLeft = () => {
             <p>Work</p>
           </div>
 
-          <p>3</p>
+          <p>{todos.length}</p>
         </div>
 
         <div className="row row-space">
@@ -89,7 +89,7 @@ const HomeLeft = () => {
             <p>List 1</p>
           </div>
 
-          <p>3</p>
+          <p>{todos.length}</p>
         </div>
 
         <h4>Tags</h4>

@@ -17,22 +17,33 @@ export default function Login() {
   const handlePassword = (e) => setPassword(e.target.value);
   const handleName = (e) => setName(e.target.value);
 
-  const handleLoginSubmit = (e) => {
+  const handleLoginSubmit = async (e) => {
     e.preventDefault();
-    const requestBody = { email, password, name };
+    try {
+      const requestBody = { email, password, name };
 
-    axios
-      .post(`${API_URL}/user/login`, requestBody)
-      .then((response) => {
-        console.log("JWT token", response.data.authToken);
-        storeToken(response.data.authToken);
-        authenticateUser();
-        navigate("/");
-      })
-      .catch((error) => {
-        const errorDescription = error.response.data.message;
-        setErrorMessage(errorDescription);
-      });
+      const res = await axios.post(`${API_URL}/user/login`, requestBody);
+      navigate(`/?id=${res.data?._id}`);
+      // storeToken(res.data)
+
+      console.log(res.data);
+    } catch (error) {
+      console.log(error.response.data);
+    }
+
+    // axios
+    //   .post(`${API_URL}/user/login`, requestBody)
+    //   .then((response) => {
+    //     console.log("JWT token", response.data.authToken);
+    //     console.log(response.data)
+    //     storeToken(response.data.authToken);
+    //     authenticateUser();
+    //     navigate("/");
+    //   })
+    //   .catch((error) => {
+    //     const errorDescription = error.response.data.message;
+    //     setErrorMessage(errorDescription);
+    //   });
   };
 
   return (
@@ -59,7 +70,7 @@ export default function Login() {
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <p>Do not have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
+      <Link to={"/register"}>Sign Up</Link>
     </div>
   );
 }

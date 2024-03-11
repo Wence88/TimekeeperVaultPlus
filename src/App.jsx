@@ -12,9 +12,9 @@ function App() {
       <Route
         path="/"
         element={
-          <IsPrivate>
+       
             <HomePage />
-          </IsPrivate>
+       
         }
       />
       <Route path="/register" element={<Register />} />
