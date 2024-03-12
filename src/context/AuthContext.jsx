@@ -33,6 +33,7 @@ export default function AuthContextProvider({ children }) {
           setUser(user);
         })
         .catch((error) => {
+          console.log("error", error);
           setIsLoggedIn(false);
           setIsLoading(false);
           setUser(null);

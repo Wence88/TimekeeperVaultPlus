@@ -19,9 +19,8 @@ export default function Login() {
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
+    const requestBody = { email, password, name };
     try {
-      const requestBody = { email, password, name };
-
       const res = await axios.post(`${API_URL}/user/login`, requestBody);
       navigate(`/?id=${res.data?._id}`);
       // storeToken(res.data)
@@ -31,19 +30,20 @@ export default function Login() {
       console.log(error.response.data);
     }
 
-    // axios
-    //   .post(`${API_URL}/user/login`, requestBody)
-    //   .then((response) => {
-    //     console.log("JWT token", response.data.authToken);
-    //     console.log(response.data)
-    //     storeToken(response.data.authToken);
-    //     authenticateUser();
-    //     navigate("/");
-    //   })
-    //   .catch((error) => {
-    //     const errorDescription = error.response.data.message;
-    //     setErrorMessage(errorDescription);
-    //   });
+    axios
+
+      .post(`${API_URL}/user/logout`, requestBody)
+      .then((response) => {
+        console.log("JWT token", response.data.authToken);
+        console.log(response.data);
+        storeToken(response.data.authToken);
+        authenticateUser();
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorDescription = error.response.data.message;
+        setErrorMessage(errorDescription);
+      });
   };
 
   return (
